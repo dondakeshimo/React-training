@@ -11,7 +11,7 @@ module.exports = merge(common, {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
-    }
+    },
     devServer: {
             contentBase: './dist',
         }
