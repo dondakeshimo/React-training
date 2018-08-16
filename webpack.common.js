@@ -1,3 +1,5 @@
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     module: {
         rules: [
@@ -7,11 +9,27 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: { minimize: true }
+                    }
+                ]
             }
         ]
     },
     output: {
         publicPath: '/',
         filename: '[name].[hash].js'
-    }
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: './src/index.html',
+            filename: './index.html',
+            favicon: './src/favicon.ico'
+        })
+    ]
 };
