@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './style.scss';
 import img from '../../public/assets/cat.jpg';
 const App = () => <p>App<br/><img src={img} /></p>;
 

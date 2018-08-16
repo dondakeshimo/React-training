@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     module: {
@@ -41,6 +42,7 @@ module.exports = {
             template: './src/index.html',
             filename: './index.html',
             favicon: './src/favicon.ico'
-        })
+        }),
+        new CleanWebpackPlugin(['dist']),
     ]
 };
